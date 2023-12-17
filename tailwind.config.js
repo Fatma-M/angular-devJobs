@@ -24,11 +24,6 @@ module.exports = {
         darkCardColor: "#19202D",
         darkThemeGray: "#121721",
       },
-      backgroundImage: {
-        // "header-pattern": "url('/src/assets/desktop/bg-pattern-header.svg')",
-        // "header-pattern-mobile":
-        //   "url('./src/assets/mobile/bg-pattern-header.svg')",
-      },
     },
   },
   plugins: [],

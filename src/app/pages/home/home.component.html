@@ -81,10 +81,9 @@
   <app-job-item *ngFor="let job of filteredJobs" [job]="job"></app-job-item>
 </div>
 
-<!-- <div
-  id="load-more-btn"
-  class="bg-darkBlue py-2 px-5 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out w-fit font-bold mx-auto mb-24 cursor-pointer"
-  (click)="loadMore()"
+<h1
+  class="text-red-700 w-full text-center text-2xl col-span-4 mt-4"
+  *ngIf="noJobsFound"
 >
-  Load More
-</div> -->
+  No data found for this search.
+</h1>

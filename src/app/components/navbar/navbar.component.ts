@@ -10,10 +10,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
-  ngOnInit(): void {
-    // const body = this.renderer.selectRootElement('body');
-    // this.renderer.addClass(body, 'light');
-  }
+  ngOnInit(): void {}
 
   toggleDarkMode() {
     const body = this.renderer.selectRootElement('body', true);

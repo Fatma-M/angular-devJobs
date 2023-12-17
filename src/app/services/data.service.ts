@@ -7,9 +7,6 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
-  // jobs!: Job[];
-
-  // isFlagged = new Subject<boolean>();
   constructor(private http: HttpClient) {}
 
   fetchData(): Observable<Job[]> {

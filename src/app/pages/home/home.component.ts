@@ -13,13 +13,13 @@ export class HomeComponent implements OnInit {
   filterByTitle: string = '';
   filterByLocation: string = '';
   fullTime: boolean = false;
+  noJobsFound: boolean = false;
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.dataService.fetchData().subscribe({
       next: (data: Job[]) => {
-        // this.jobs = [...data];
         if (!data?.length) return;
         this.jobs = data;
         this.filteredJobs = this.jobs;
@@ -43,8 +43,12 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    this.filteredJobs = selectedJobs.length > 0 ? [...selectedJobs] : this.jobs;
+    this.filteredJobs = selectedJobs;
 
-    // console.log(this.filterByLocation, this.filterByTitle, this.fullTime);
+    if (this.filteredJobs.length < 1) {
+      this.noJobsFound = true;
+    } else {
+      this.noJobsFound = false;
+    }
   }
 }
