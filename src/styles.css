@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-header-pattern-mobile {
+  /* background-image: url("/src/assets/mobile/bg-pattern-header.svg"); */
+  background-image: url("./assets/mobile/bg-pattern-header.svg");
+}
+
+/* .bg-header-pattern {
+  background-image: url("./assets/desktop/bg-pattern-header.svg");
+} */
+
+/* dark mode main color */
+.dark {
+  background-color: #121721;
+  color: #fff;
+}
+
+/* remove the input autofill background*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}

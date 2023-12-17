@@ -1,0 +1,90 @@
+<div
+  class="filter container mx-auto bg-white dark:bg-darkThemeBG flex flex-col md:flex-row items-center md:justify-between justify-center gap-3 absolute top-[120px] rounded-md md:h-[80px] md:px-6 sm:px-12 px-3 py-4 md:py-0"
+>
+  <div
+    class="flex items-center justify-between h-full md:flex-[2] flex-1 w-full"
+  >
+    <!-- filter by title... -->
+    <div
+      class="searchInput flex items-center h-full md:border-r-2 border-lightGray dark:border-darkGray md:pr-3 md:flex-[4] flex-1"
+    >
+      <img
+        src="../../../assets/desktop/icon-search.svg"
+        alt="search icon"
+        class="w-[24px] h-[24px] mr-3"
+      />
+      <input
+        type="text"
+        placeholder="Filter by title.."
+        name="filter-by-title"
+        id="filter-by-title"
+        [(ngModel)]="filterByTitle"
+        (input)="filterJobs()"
+        class="outline-none w-[70%] bg-inherit dark:text-white"
+      />
+    </div>
+    <!-- filter by location -->
+    <div
+      class="location flex items-center h-full md:border-r-2 border-lightGray dark:border-darkGray md:px-4 md:flex-[2] flex-1"
+    >
+      <img
+        src="../../../assets/desktop/icon-location.svg"
+        alt="location icon"
+        class="w-[16px] h-[23px] mr-3"
+      />
+      <input
+        type="text"
+        placeholder="Filter by location"
+        name="filter-by-location"
+        id="filter-by-location"
+        [(ngModel)]="filterByLocation"
+        (input)="filterJobs()"
+        class="outline-none w-[70%] dark:text-white bg-inherit"
+      />
+    </div>
+  </div>
+  <!-- filter by full time and actions -->
+  <div
+    class="location flex items-center justify-between h-full flex-1 md:px-2 md:gap-1 w-full"
+  >
+    <div class="flex items-center justify-start flex-1">
+      <input
+        type="checkbox"
+        name="filter-by-fulltime"
+        id="filter-by-fulltime"
+        (change)="filterJobs()"
+        [(ngModel)]="fullTime"
+        class="outline-none w-[20px] h-[20px] mr-2 accent-darkBlue cursor-pointer"
+      />
+      <span class="md:mr-4 mr-2 font-bold text-sm dark:text-lightGray"
+        >Full Time Only</span
+      >
+    </div>
+    <!-- Add button -->
+    <div class="flex md:items-center items-start justify-start flex-1">
+      <a
+        id="add-job-btn"
+        class="cursor-pointer w-28 h-full text-center bg-darkBlue text-white px-3 py-1 rounded-lg shadow-sm shadow-darkGray"
+        routerLink="/add-new"
+        >Add New</a
+      >
+    </div>
+  </div>
+</div>
+
+<!-- MAIN PAGE CONTENT - JOBS CARDS -->
+<div
+  id="jobs-container"
+  class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-[80px] mb-10 dark:bg-darkThemeBG"
+>
+  <!-- CARDS GOES HERE FROM JS CODE -->
+  <app-job-item *ngFor="let job of filteredJobs" [job]="job"></app-job-item>
+</div>
+
+<!-- <div
+  id="load-more-btn"
+  class="bg-darkBlue py-2 px-5 rounded-md text-white hover:bg-lightBlue transition-colors ease-in-out w-fit font-bold mx-auto mb-24 cursor-pointer"
+  (click)="loadMore()"
+>
+  Load More
+</div> -->

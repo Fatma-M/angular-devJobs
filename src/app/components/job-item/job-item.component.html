@@ -1,0 +1,28 @@
+<div
+  class="card bg-white dark:bg-darkCardColor p-6 relative flex flex-col items-start justify-between rounded-md mt-[50px] cursor-pointer"
+>
+  <a [routerLink]="['job-details', job.id]">
+    <!-- card image -->
+    <div
+      class="card-image w-[50px] h-[50px] flex items-center rounded-2xl absolute top-[-25px]"
+      [ngStyle]="{ background: job.logoBackground }"
+    >
+      <img [src]="job.logo" alt="" class="block mx-auto" />
+    </div>
+    <!-- card details -->
+    <div class="time mt-6">
+      <span class="text-darkGray">{{ job.postedAt }}</span>
+      <span class="text-darkGray">.</span>
+      <span class="text-darkGray">{{ job.contract }}</span>
+    </div>
+    <div class="title font-bold my-1">
+      <p class="text-lg">{{ job.position }}</p>
+    </div>
+    <div class="companyName">
+      <span class="text-darkGray">{{ job.company }}</span>
+    </div>
+    <div class="companyLocation mt-8">
+      <span class="text-darkBlue font-bold">{{ job.location }}</span>
+    </div>
+  </a>
+</div>
